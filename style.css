@@ -1,0 +1,313 @@
+/* --- Variables (del Manual de Marca) --- */
+:root {
+    --color-primary: #164872;   /* Azul */
+    --color-secondary: #c19259; /* Dorado */
+    --color-dark: #000000;      /* Negro */
+    --color-light: #FDFBF5;     /* Fondo crema */
+    --color-white: #FFFFFF;     /* Blanco */
+    
+    /* Tipografías (Fallback de Google Fonts) */
+    --font-display: 'Cinzel', serif; /* Para títulos */
+    --font-body: 'Montserrat', sans-serif;  /* Para cuerpo */
+}
+
+/* --- Reseteo y Globales --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--color-dark);
+    background-color: var(--color-light);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-display);
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: var(--color-primary);
+}
+
+/* --- Header y Navegación --- */
+.main-header {
+    background: var(--color-white);
+    border-bottom: 2px solid var(--color-secondary);
+    padding: 0.5rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-icon {
+    height: 60px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu li {
+    margin-left: 2rem;
+}
+
+.nav-menu a {
+    font-family: var(--font-body);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: var(--color-primary);
+}
+
+.nav-menu a:hover, .nav-menu a.active {
+    color: var(--color-secondary);
+}
+
+.nav-toggle {
+    display: none; 
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-primary);
+}
+
+/* --- Botones (CTAs) --- */
+.cta-button {
+    display: inline-block;
+    background: var(--color-secondary);
+    color: var(--color-white);
+    padding: 12px 24px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+.cta-button:hover {
+    background: #a97f4b; /* Dorado más oscuro */
+}
+
+.cta-button-secondary {
+    display: inline-block;
+    background: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-secondary);
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+.cta-button-secondary:hover {
+    background: var(--color-secondary);
+    color: var(--color-white);
+    border-color: var(--color-secondary);
+}
+
+.cta-link {
+    font-weight: 600;
+    color: var(--color-secondary);
+}
+.cta-link:hover {
+    text-decoration: underline;
+}
+
+/* --- Hero Section --- */
+.hero {
+    background: var(--color-light); 
+    text-align: center;
+    padding: 4rem 0;
+}
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #444;
+}
+
+/* --- Sección Devocional (ACTUALIZADA) --- */
+.devotion-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 3rem 20px;
+}
+
+/* Estilo de la imagen de la tarjeta */
+.card-image {
+    width: 100%;
+    height: 180px; /* Altura fija para todas las imágenes */
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
+    margin-bottom: 1.5rem;
+    border-radius: 4px; /* Bordes redondeados suaves */
+}
+
+.devotion-card {
+    background: var(--color-white);
+    padding: 0; /* Quitamos padding para que la imagen toque los bordes */
+    border: 1px solid #eee;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: center;
+    overflow: hidden; /* Asegura que la imagen respete el borde de la tarjeta */
+    border-radius: 4px; /* Coincide con el borde de la imagen */
+}
+
+/* Añadimos padding al contenido de texto de la tarjeta */
+.devotion-card h3,
+.devotion-card p,
+.devotion-card a {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+/* Espacio final para el enlace */
+.devotion-card a {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+
+/* --- Sección Productos --- */
+.featured-products {
+    padding: 3rem 0;
+    text-align: center;
+    background: var(--color-white);
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.product-card {
+    background: #fff;
+    border: 1px solid #eee;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    border-radius: 4px; /* Consistencia en bordes */
+    overflow: hidden; /* Consistencia */
+}
+.product-card:hover {
+    transform: translateY(-5px);
+}
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+.product-card h3, .product-card p {
+    padding: 0 1.5rem;
+}
+.product-card h3 {
+    margin-top: 1rem;
+    color: var(--color-dark);
+}
+.product-card a {
+    margin: 1.5rem;
+    text-align: center;
+}
+
+/* --- Footer --- */
+.main-footer {
+    background: var(--color-primary);
+    color: #ddd;
+    padding: 3rem 0;
+    text-align: center;
+    margin-top: 0;
+}
+.main-footer p {
+    color: var(--color-white);
+}
+.social-links a {
+    color: var(--color-white);
+    margin: 0 0.5rem;
+    text-decoration: underline;
+    font-weight: 600;
+}
+.social-links a:hover {
+    color: var(--color-secondary);
+}
+
+/* --- Responsividad (Móvil) --- */
+@media (max-width: 768px) {
+    .logo-container {
+        max-width: 250px; 
+    }
+    .logo-icon {
+        height: 45px;
+    }
+    .logo-text {
+        font-size: 1.4rem;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+    .nav-menu {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 75px; /* Ajusta según la altura final de tu header */
+        left: 0;
+        background: var(--color-white);
+        text-align: center;
+        border-top: 1px solid #eee;
+    }
+    .nav-menu.active {
+        display: flex; 
+    }
+    .nav-menu li {
+        margin: 1rem 0;
+    }
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+}
