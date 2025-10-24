@@ -20,22 +20,82 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // --- GALERÍA DE IMÁGENES DEL PRODUCTO ---
+    const mainImage = document.getElementById('main-product-image');
+    const thumbnails = document.querySelectorAll('.thumbnail-gallery .thumbnail');
+
+    if (mainImage && thumbnails.length > 0) {
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', function() {
+                // Cambiar la imagen principal
+                mainImage.src = this.src;
+
+                // Quitar la clase 'active' de todas las miniaturas
+                thumbnails.forEach(thumb => thumb.classList.remove('active'));
+
+                // Añadir la clase 'active' solo a la miniatura clickeada
+                this.classList.add('active');
+            });
+        });
+    }
+
+    // --- Lógica del Modal (Zoom) ---
+    const modal = document.getElementById('image-modal');
+    const modalImg = document.getElementById('modal-image-content');
+    const closeBtn = document.getElementById('modal-close');
+
+    if (modal && mainImage && modalImg && closeBtn) {
+        
+        // Abrir modal al hacer clic en la imagen principal
+        mainImage.addEventListener('click', function() {
+            modal.classList.add('active'); // Muestra el modal
+            modalImg.src = this.src; // Carga la imagen actual
+        });
+
+        // Cerrar modal con el botón 'x'
+        closeBtn.addEventListener('click', function() {
+            modal.classList.remove('active'); // Oculta el modal
+        });
+
+        // Cerrar modal al hacer clic fuera de la imagen (en el overlay)
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) { // Si el clic es en el overlay y no en la imagen
+                modal.classList.remove('active'); // Oculta el modal
+            }
+        });
+    }
+
+    // --- Botón Dinámico de WhatsApp ---
+    const whatsappBtn = document.getElementById('whatsapp-button');
+    const quantityInput = document.getElementById('quantity');
+
+    if (whatsappBtn && quantityInput) {
+        whatsappBtn.addEventListener('click', function() {
+            // 1. Obtener la cantidad seleccionada
+            const quantity = quantityInput.value;
+            
+            // 2. Definir el número y el mensaje
+            const baseNumber = '525512436351';
+            let message = `Hola, me interesa adquirir ${quantity} agenda(s). Quiero conocer el precio y gastos de envío.`;
+            
+            // 3. Codificar el mensaje para la URL
+            const encodedMessage = encodeURIComponent(message);
+            
+            // 4. Crear la URL final
+            const whatsappURL = `https://wa.me/${baseNumber}?text=${encodedMessage}`;
+            
+            // 5. Abrir en una nueva pestaña
+            window.open(whatsappURL, '_blank', 'noopener,noreferrer');
+        });
+    }
+
 }); // <-- Fin del 'DOMContentLoaded'
 
-// =================================================================
-// ===== NUEVO BLOQUE DE CÓDIGO (PEGAR AL FINAL DEL ARCHIVO) =====
-// =================================================================
-
-// Esto limpia el formulario cuando el usuario regresa
-// desde la página de "Éxito" de Formspree.
+// --- Limpiador de formulario (Esto se queda) ---
 window.addEventListener('pageshow', function(event) {
     
-    // 'event.persisted' es 'true' si la página se cargó desde el "bfcache" (memoria)
     if (event.persisted) {
-        // Busca el formulario de contacto
         const contactForm = document.getElementById('contact-form');
-        
-        // Si el formulario existe en la página actual, lo resetea.
         if (contactForm) {
             contactForm.reset();
         }
