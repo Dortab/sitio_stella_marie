@@ -58,6 +58,11 @@ a:hover {
     border-bottom: 2px solid var(--color-secondary);
     padding: 0.5rem 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+
+    /* --- MODIFICACIÓN PARA MENÚ FIJO --- */
+    position: sticky;
+    top: 0;
+    z-index: 101; /* Debe ser mayor que el WA float (100) y menor que el modal (1000) */
 }
 
 .main-header .container {
@@ -126,9 +131,9 @@ a:hover {
     transition: background 0.3s ease;
     text-transform: uppercase;
     font-size: 0.9rem;
-    border: none; /* Añadido para normalizar botones y enlaces */
-    cursor: pointer; /* Añadido para botones */
-    font-family: var(--font-body); /* Añadido para botones */
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-body);
 }
 .cta-button:hover {
     background: #a97f4b; /* Dorado más oscuro */
@@ -273,14 +278,14 @@ a:hover {
 
 /* --- Estilos Página de Contacto --- */
 .contact-section {
-    background-color: var(--color-white); /* Fondo blanco */
+    background-color: var(--color-white);
     padding: 3rem 20px;
     text-align: center;
-    border-radius: 5px; /* Bordes redondeados */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Sombra suave */
-    margin-top: 3rem; /* Espacio superior */
-    margin-bottom: 3rem; /* Espacio inferior */
-    max-width: 900px; /* Ancho máximo en la página */
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    max-width: 900px;
 }
 
 .contact-section p {
@@ -321,7 +326,7 @@ a:hover {
 
 .cta-form {
     display: inline-block;
-    background: var(--color-primary); /* Azul principal */
+    background: var(--color-primary);
     color: var(--color-white);
     padding: 12px 24px;
     font-weight: 600;
@@ -335,26 +340,25 @@ a:hover {
 }
 
 .cta-form:hover {
-    background: #0a2f4c; /* Azul más oscuro */
+    background: #0a2f4c;
 }
 
 .cta-form i {
-    margin-right: 8px; /* Espacio entre icono y texto */
+    margin-right: 8px;
 }
 
 /* --- ESTILOS PARA PÁGINA DE CATÁLOGO (PRODUCTO) --- */
 .product-container {
     display: grid;
-    grid-template-columns: 1fr; /* Una columna en móvil por defecto */
+    grid-template-columns: 1fr;
     gap: 2rem;
     margin-top: 3rem;
     margin-bottom: 3rem;
 }
 
-/* En pantallas más grandes, cambia a dos columnas */
 @media (min-width: 768px) {
     .product-container {
-        grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -369,7 +373,7 @@ a:hover {
 
 .thumbnail-gallery {
     display: grid;
-    grid-template-columns: repeat(6, 1fr); /* 6 miniaturas por fila */
+    grid-template-columns: repeat(6, 1fr);
     gap: 0.5rem;
     margin-top: 1rem;
 }
@@ -399,7 +403,7 @@ a:hover {
 
 .product-title {
     font-size: 2.5rem;
-    margin-bottom: 1.5rem; /* Aumentado por quitar el precio */
+    margin-bottom: 1.5rem;
 }
 
 .product-description {
@@ -428,7 +432,7 @@ a:hover {
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-top: auto; /* Empuja esto al final */
+    margin-top: auto;
 }
 
 .product-actions label {
@@ -441,12 +445,12 @@ a:hover {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
-    text-align: center; /* Centra el número */
+    text-align: center;
 }
 
 .product-actions .cta-button {
-    flex-grow: 1; /* El botón ocupa el espacio restante */
-    text-align: center; /* Centra el texto del botón */
+    flex-grow: 1;
+    text-align: center;
 }
 .product-actions .cta-button i {
     margin-right: 8px;
@@ -454,7 +458,7 @@ a:hover {
 
 /* --- Estilos del Modal (Lightbox) para Zoom --- */
 .modal-overlay {
-    display: none; /* Oculto por defecto */
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -462,13 +466,13 @@ a:hover {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(22, 72, 114, 0.9); /* Azul de la marca con opacidad */
+    background-color: rgba(22, 72, 114, 0.9);
     align-items: center;
     justify-content: center;
 }
 
 .modal-overlay.active {
-    display: flex; /* Se muestra con JS */
+    display: flex;
 }
 
 .modal-content {
@@ -502,7 +506,7 @@ a:hover {
 
 .about-card {
     display: flex;
-    flex-direction: column; /* Apilado en móvil por defecto */
+    flex-direction: column;
     align-items: center;
     background: var(--color-white);
     border-radius: 8px;
@@ -513,30 +517,30 @@ a:hover {
 
 @media (min-width: 768px) {
     .about-card {
-        flex-direction: row; /* En filas para desktop */
+        flex-direction: row;
         text-align: left;
     }
     .about-card.right-aligned {
-        flex-direction: row-reverse; /* Invertir orden para alinear derecha */
+        flex-direction: row-reverse;
     }
 }
 
 .about-image-container {
     flex: 1;
-    max-width: 100%; /* Por defecto */
+    max-width: 100%;
 }
 
 @media (min-width: 768px) {
     .about-image-container {
         flex: 1;
-        max-width: 50%; /* Ocupa la mitad en desktop */
+        max-width: 50%;
     }
 }
 
 .about-image-container img {
     width: 100%;
-    height: 350px; /* Altura fija para consistencia */
-    object-fit: cover; /* Asegura que la imagen cubra el área */
+    height: 350px;
+    object-fit: cover;
     display: block;
 }
 
@@ -548,12 +552,12 @@ a:hover {
 .about-text h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    text-align: center; /* Centrado en móvil */
+    text-align: center;
 }
 
 @media (min-width: 768px) {
     .about-text h2 {
-        text-align: left; /* Alineado a la izquierda en desktop */
+        text-align: left;
     }
 }
 
@@ -562,13 +566,130 @@ a:hover {
     font-size: 1.1rem;
     line-height: 1.7;
     color: #555;
-    text-align: center; /* Centrado en móvil */
+    text-align: center;
 }
 
 @media (min-width: 768px) {
     .about-text p {
-        text-align: left; /* Alineado a la izquierda en desktop */
+        text-align: left;
     }
+}
+
+/* --- ESTILOS PÁGINA SANTORAL --- */
+.calendar-container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .calendar-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.calendar-month {
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.calendar-month h2 {
+    font-size: 1.5rem;
+    padding: 1rem 1.5rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    margin: 0;
+}
+
+.calendar-list {
+    list-style: none;
+    padding: 1.5rem;
+    margin: 0;
+}
+
+.calendar-list li {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #333;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.calendar-list li:last-child {
+    border-bottom: none;
+}
+
+.calendar-list .calendar-day {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--color-secondary);
+    margin-right: 1rem;
+    width: 40px;
+    text-align: right;
+}
+
+/* --- ESTILOS PÁGINA CATECISMO (INFOGRAFÍAS) --- */
+.infographic-grid-container {
+    display: grid;
+    /* 1 columna en móvil, 2 en tablet, 3 en desktop */
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+@media (min-width: 576px) {
+    .infographic-grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .infographic-grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.infographic-card {
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.infographic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.infographic-card img {
+    width: 100%;
+    height: auto; 
+    object-fit: cover;
+    display: block;
+    cursor: zoom-in;
+}
+
+.infographic-text {
+    padding: 1.5rem;
+}
+
+.infographic-text h3 {
+    font-size: 1.4rem;
+    color: var(--color-primary);
+}
+
+.infographic-text p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0;
 }
 
 /* --- Footer --- */
@@ -612,7 +733,7 @@ a:hover {
         flex-direction: column;
         width: 100%;
         position: absolute;
-        top: 75px; /* Ajusta según la altura final de tu header */
+        top: 75px; /* Ajusta esto a la altura de tu header */
         left: 0;
         background: var(--color-white);
         text-align: center;
@@ -635,12 +756,16 @@ a:hover {
     }
 
     .thumbnail-gallery {
-        grid-template-columns: repeat(4, 1fr); /* 4 miniaturas en móvil */
+        grid-template-columns: repeat(4, 1fr);
     }
 
     .product-actions {
         flex-direction: column;
         align-items: stretch;
+    }
+    
+    .infographic-grid-container {
+        grid-template-columns: 1fr; /* 1 columna en móvil pequeño */
     }
 }
 
@@ -651,15 +776,12 @@ a:hover {
     height: 60px;
     bottom: 25px;
     right: 25px;
-    
-    background-color: #25D366; /* Color oficial de WhatsApp */
-    
+    background-color: #25D366;
     color: var(--color-white);
     border-radius: 50%;
     text-align: center;
     font-size: 2rem;
-    line-height: 60px; /* Centra el icono verticalmente */
-    
+    line-height: 60px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     z-index: 100;
     transition: transform 0.3s ease;
@@ -667,4 +789,63 @@ a:hover {
 
 .whatsapp-float:hover {
     transform: scale(1.1);
+}
+
+/* --- ESTILOS PÁGINA CINE DE SANTOS (NUEVO) --- */
+.movie-grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+    .movie-grid-container {
+        /* 2 columnas en tablet */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .movie-grid-container {
+         /* 3 columnas en desktop, como la página de catecismo */
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.movie-card {
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.movie-card .movie-poster {
+    width: 100%;
+    height: 400px; /* Alto fijo para pósters */
+    object-fit: cover; /* Asegura que la imagen cubra el espacio */
+    object-position: top; /* Se enfoca en la parte superior del póster */
+    display: block;
+}
+
+.movie-text {
+    padding: 1.5rem;
+}
+
+.movie-text h3 {
+    font-size: 1.4rem;
+    color: var(--color-primary);
+}
+
+.movie-text p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0;
 }

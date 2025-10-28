@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosotros - Stella Marie</title>
+    <title>Cine de Santos - Películas Católicas - Stella Marie</title>
     
-    <meta name="description" content="Conoce nuestra Misión, Visión y Valores en Stella Marie. Somos un apostolado que busca crear materiales para ayudar en el camino a la santidad.">
+    <meta name="description" content="Recomendaciones de películas católicas y de santos. Descubre filmes inspiradores como San Felipe de Jesús, La Pasión de Cristo y San Ignacio de Loyola.">
 
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,12 +24,12 @@
                 <button class="nav-toggle" aria-label="Abrir menú">☰</button>
                 <ul class="nav-menu">
                     <li><a href="index.html">Inicio</a></li>
-                    <li><a href="nosotros.html" class="active">Nosotros</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
                     <li><a href="catalogo.html">Catálogo</a></li>
                     <li><a href="santoral.html">Santoral</a></li>
                     <li><a href="catecismo.html">Catecismo</a></li>
-                    <li><a href="peliculas.html">Películas recomendadas</a></li>
-                    <li><a href="contacto.html">Contacto</a></li> 
+                    <li><a href="peliculas.html" class="active">Películas recomendadas</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
                 </ul>
             </nav>
         </div>
@@ -37,49 +37,39 @@
     <main>
         <section class="page-header">
             <div class="container">
-                <h1>Quiénes Somos</h1>
-                <p class="page-subtitle">Nuestra Misión, Visión y Valores en Stella Marie</p>
+                <h1>Cine de Santos</h1>
+                <p class="page-subtitle">Películas recomendadas del mes</p>
             </div>
         </section>
-        <section class="about-section container">
-            <div class="about-card left-aligned">
-                <div class="about-text">
-                    <h2>Nuestra Visión</h2>
-                    <p>SUMANDO TODO LO QUE SOMOS, RECONOCEMOS NUESTRA PEQUEÑEZ Y QUEREMOS SER GUIADOS POR LA SANTÍSIMA VIRGEN MARÍA, TAMBIÉN CONOCIDA COMO LA ESTRELLA DEL MAR.</p>
-                </div>
-                <div class="about-image-container">
-                    <img src="images/nosotros1.jpg" alt="Virgen María como Stella Maris">
-                </div>
-            </div>
-            <div class="about-card right-aligned">
-                <div class="about-image-container">
-                    <img src="images/nosotros2.jpg" alt="Apóstoles compartiendo">
-                </div>
-                <div class="about-text">
-                    <h2>Nuestros Valores</h2>
-                    <p>NUESTROS VALORES SON: SERVICIO, CARIDAD, AMOR Y OBEDIENCIA.</p>
+
+        <div class="movie-grid-container container">
+
+            <div class="movie-card">
+                <img src="images/pelicula-01.jpg" alt="Póster de la película San Felipe de Jesús" class="movie-poster">
+                <div class="movie-text">
+                    <h3>San Felipe de Jesús</h3>
+                    <p>La inspiradora vida del primer santo mexicano, su viaje misionero a Filipinas y su martirio en Japón. Una historia de fe inquebrantable.</p>
                 </div>
             </div>
-            <div class="about-card left-aligned">
-                <div class="about-text">
-                    <h2>Nuestra Misión</h2>
-                    <p>BUSCAMOS SER UNA PROPUESTA SÓLIDA EN CONOCIMIENTO DEL CATOLICISMO CON NUESTROS MATERIALES PARA QUE AYUDEN A MUCHOS CATÓLICOS DE CUALQUIER PARTE DEL MUNDO EN SU CAMINO HACIA LA SANTIDAD.</p>
-                </div>
-                <div class="about-image-container">
-                    <img src="images/nosotros3.jpg" alt="Iglesia con personas orando">
-                </div>
-            </div>
-            <div class="about-card right-aligned">
-                <div class="about-image-container">
-                    <img src="images/nosotros4.jpg" alt="Hombre en un bote bajo la luna">
-                </div>
-                <div class="about-text">
-                    <h2>Nuestro Objetivo</h2>
-                    <p>QUEREMOS AYUDAR EN LA EVANGELIZACIÓN SIENDO APÓSTOLES CREANDO MATERIALES QUE TE AYUDEN A ACERCARTE A DIOS; TU CAMINO HACIA LA SANTIDAD.</p>
+
+            <div class="movie-card">
+                <img src="images/pelicula-02.jpg" alt="Póster de la película La Pasión de Cristo" class="movie-poster">
+                <div class="movie-text">
+                    <h3>La Pasión de Cristo</h3>
+                    <p>Una cruda y devota representación de las últimas doce horas en la vida de Jesús de Nazaret, desde el Huerto de Getsemaní hasta su crucifixión.</p>
                 </div>
             </div>
-        </section>
-    </main>
+
+            <div class="movie-card">
+                <img src="images/pelicula-03.jpg" alt="Póster de la película San Ignacio de Loyola" class="movie-poster">
+                <div class="movie-text">
+                    <h3>San Ignacio de Loyola</h3>
+                    <p>La historia de "El Soldado de Dios", desde su vida como un joven soldado arrogante hasta su profunda conversión y la fundación de la Compañía de Jesús.</p>
+                </div>
+            </div>
+            
+        </div>
+        </main>
     <footer class="main-footer">
         <div class="container">
             <p>&copy; 2025 Stella Marie. Todos los derechos reservados.</p>
@@ -90,7 +80,9 @@
             </div>
         </div>
     </footer>
+    
     <script src="script.js"></script>
+
     <a href="https://wa.me/525512436351?text=Hola%20Stella%20Marie%2C%20buen%20d%C3%ADa.%20Me%20gustar%C3%ADa%20recibir%20informes%20sobre%20sus%20materiales..." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-whatsapp"></i>
     </a>

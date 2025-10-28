@@ -20,20 +20,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- GALERÍA DE IMÁGENES DEL PRODUCTO ---
+    // --- GALERÍA DE IMÁGENES DEL PRODUCTO (Página Catálogo) ---
     const mainImage = document.getElementById('main-product-image');
     const thumbnails = document.querySelectorAll('.thumbnail-gallery .thumbnail');
 
     if (mainImage && thumbnails.length > 0) {
         thumbnails.forEach(thumbnail => {
             thumbnail.addEventListener('click', function() {
-                // Cambiar la imagen principal
                 mainImage.src = this.src;
-
-                // Quitar la clase 'active' de todas las miniaturas
                 thumbnails.forEach(thumb => thumb.classList.remove('active'));
-
-                // Añadir la clase 'active' solo a la miniatura clickeada
                 this.classList.add('active');
             });
         });
@@ -44,56 +39,58 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalImg = document.getElementById('modal-image-content');
     const closeBtn = document.getElementById('modal-close');
 
-    if (modal && mainImage && modalImg && closeBtn) {
+    if (modal && modalImg && closeBtn) {
         
-        // Abrir modal al hacer clic en la imagen principal
-        mainImage.addEventListener('click', function() {
-            modal.classList.add('active'); // Muestra el modal
-            modalImg.src = this.src; // Carga la imagen actual
-        });
+        // Disparador para la imagen principal del CATÁLOGO
+        if (mainImage) {
+            mainImage.addEventListener('click', function() {
+                modal.classList.add('active');
+                modalImg.src = this.src;
+            });
+        }
 
-        // Cerrar modal con el botón 'x'
+        // Disparadores para las infografías del CATECISMO
+        const infographicImages = document.querySelectorAll('.infographic-thumbnail');
+        if (infographicImages.length > 0) {
+            infographicImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    modal.classList.add('active');
+                    modalImg.src = this.src;
+                });
+            });
+        }
+
+        // Lógica para CERRAR el modal (funciona para ambas páginas)
         closeBtn.addEventListener('click', function() {
-            modal.classList.remove('active'); // Oculta el modal
+            modal.classList.remove('active');
         });
 
-        // Cerrar modal al hacer clic fuera de la imagen (en el overlay)
         modal.addEventListener('click', function(e) {
-            if (e.target === modal) { // Si el clic es en el overlay y no en la imagen
-                modal.classList.remove('active'); // Oculta el modal
+            if (e.target === modal) {
+                modal.classList.remove('active');
             }
         });
     }
 
-    // --- Botón Dinámico de WhatsApp ---
+    // --- Botón Dinámico de WhatsApp (Página Catálogo) ---
     const whatsappBtn = document.getElementById('whatsapp-button');
     const quantityInput = document.getElementById('quantity');
 
     if (whatsappBtn && quantityInput) {
         whatsappBtn.addEventListener('click', function() {
-            // 1. Obtener la cantidad seleccionada
             const quantity = quantityInput.value;
-            
-            // 2. Definir el número y el mensaje
             const baseNumber = '525512436351';
             let message = `Hola, me interesa adquirir ${quantity} agenda(s). Quiero conocer el precio y gastos de envío.`;
-            
-            // 3. Codificar el mensaje para la URL
             const encodedMessage = encodeURIComponent(message);
-            
-            // 4. Crear la URL final
             const whatsappURL = `https://wa.me/${baseNumber}?text=${encodedMessage}`;
-            
-            // 5. Abrir en una nueva pestaña
             window.open(whatsappURL, '_blank', 'noopener,noreferrer');
         });
     }
 
 }); // <-- Fin del 'DOMContentLoaded'
 
-// --- Limpiador de formulario (Esto se queda) ---
+// --- Limpiador de formulario (Página Contacto) ---
 window.addEventListener('pageshow', function(event) {
-    
     if (event.persisted) {
         const contactForm = document.getElementById('contact-form');
         if (contactForm) {

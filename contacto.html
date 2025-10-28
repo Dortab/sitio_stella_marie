@@ -5,24 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - Stella Marie</title>
     
+    <meta name="description" content="Contacta a Stella Marie para informes sobre la Agenda Católica Anual 2026 y otros materiales de evangelización. Llena nuestro formulario.">
+
     <link rel="stylesheet" href="style.css">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-
     <header class="main-header">
         <div class="container">
-            
             <a href="index.html" class="logo-container">
                 <img src="images/logo-stella-marie.png" alt="Logo Stella Marie" class="logo-icon">
                 <span class="logo-text">Stella Marie</span>
             </a>
-            
             <nav class="main-nav">
                 <button class="nav-toggle" aria-label="Abrir menú">☰</button>
                 <ul class="nav-menu">
@@ -31,44 +28,36 @@
                     <li><a href="catalogo.html">Catálogo</a></li>
                     <li><a href="santoral.html">Santoral</a></li>
                     <li><a href="catecismo.html">Catecismo</a></li>
-                    <li><a href="santo-patrono.html">Santo Patrono</a></li>
+                    <li><a href="peliculas.html">Películas recomendadas</a></li>
                     <li><a href="contacto.html" class="active">Contacto</a></li> 
                 </ul>
             </nav>
         </div>
     </header>
-
     <main>
         <section class="page-header">
             <div class="container">
                 <h1>Contacto</h1>
             </div>
         </section>
-
         <section class="contact-section container">
             <p>¿Tienes dudas? Llena el formulario y te contactaremos por correo.</p>
-            
-            <form action="https://formspree.io/f/TU_ID_UNICO_VA_AQUI" method="POST" class="contact-form">
-                
+            <form id="contact-form" action="https://formspree.io/f/xblzekva" method="POST" class="contact-form">
                 <div class="form-group">
                     <label for="contact-name">Nombre:</label>
                     <input type="text" id="contact-name" name="Nombre" required autocomplete="name">
                 </div>
-                
                 <div class="form-group">
                     <label for="contact-phone">Teléfono (solo números):</label>
                     <input type="tel" id="contact-phone" name="Telefono" autocomplete="tel" pattern="[0-9]*" title="Por favor, ingresa solo números." required>
                 </div>
-                
                 <div class="form-group">
                     <label for="contact-email">Tu Correo Electrónico:</label>
                     <input type="email" id="contact-email" name="_replyto" required autocomplete="email">
                 </div>
-
                 <div class="form-group">
                     <label for="contact-country">País:</label>
                     <input type="text" id="contact-country" name="Pais" autocomplete="country-name" list="country-list" required>
-                    
                     <datalist id="country-list">
                         <option value="México">
                         <option value="Estados Unidos">
@@ -93,28 +82,22 @@
                         <option value="República Dominicana">
                         <option value="Uruguay">
                         <option value="Venezuela">
-                        </datalist>
+                    </datalist>
                 </div>
-                
                 <div class="form-group">
                     <label for="contact-state">Estado / Provincia:</label>
                     <input type="text" id="contact-state" name="Estado" autocomplete="address-level1" required>
                 </div>
-
-                
                 <div class="form-group">
                     <label for="contact-message">Mensaje:</label>
                     <textarea id="contact-message" name="Mensaje" rows="6" required>Hola Stella Marie, buen día. Me gustaría recibir informes sobre sus materiales (físicos y electrónicos) que vi en el catálogo. ¡Gracias por su atención!</textarea>
                 </div>
-                
                 <button type="submit" class="cta-form">
                     <i class="fa-solid fa-paper-plane"></i> Enviar Mensaje
                 </button>
             </form>
         </section>
-        
     </main>
-
     <footer class="main-footer">
         <div class="container">
             <p>&copy; 2025 Stella Marie. Todos los derechos reservados.</p>
@@ -125,12 +108,9 @@
             </div>
         </div>
     </footer>
-
     <script src="script.js"></script>
-
-    <a href="https://wa.me/525512436351?text=Hola%20Stella%20Marie%2C%20buen%20d%C3%ADa.%20Me%20gustar%C3%ADa%20recibir%20informes%20sobre%20sus%20materiales%20(f%C3%ADsicos%20y%20electr%C3%B3nicos)%20que%20vi%20en%20el%20cat%C3%A1logo.%20%C2%A1Gracias%20por%20su%20atenci%C3%B3n!" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <a href="https://wa.me/525512436351?text=Hola%20Stella%20Marie%2C%20buen%20d%C3%ADa.%20Me%20gustar%C3%ADa%20recibir%20informes%20sobre%20sus%20materiales..." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
-
 </body>
 </html>
