@@ -59,10 +59,10 @@ a:hover {
     padding: 0.5rem 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 
-    /* --- MODIFICACIÓN PARA MENÚ FIJO --- */
+    /* --- LÍNEAS PARA HACERLO FIJO --- */
     position: sticky;
     top: 0;
-    z-index: 101; /* Debe ser mayor que el WA float (100) y menor que el modal (1000) */
+    z-index: 900; /* Asegura que esté sobre el contenido */
 }
 
 .main-header .container {
@@ -640,7 +640,7 @@ a:hover {
     /* 1 columna en móvil, 2 en tablet, 3 en desktop */
     grid-template-columns: 1fr;
     gap: 2rem;
-    padding-top: 3rem;
+    padding-top: 0; /* Ajustado por la nueva sección */
     padding-bottom: 3rem;
 }
 
@@ -733,7 +733,7 @@ a:hover {
         flex-direction: column;
         width: 100%;
         position: absolute;
-        top: 75px; /* Ajusta esto a la altura de tu header */
+        top: 75px;
         left: 0;
         background: var(--color-white);
         text-align: center;
@@ -791,7 +791,7 @@ a:hover {
     transform: scale(1.1);
 }
 
-/* --- ESTILOS PÁGINA CINE DE SANTOS (NUEVO) --- */
+/* --- ESTILOS PÁGINA CINE DE SANTOS --- */
 .movie-grid-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -848,4 +848,146 @@ a:hover {
     font-size: 1rem;
     color: #555;
     margin-bottom: 0;
+}
+
+/* --- ESTILOS SEPARADORES Y TÍTULOS DE SECCIÓN --- */
+.section-divider {
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+}
+
+
+/* --- ESTILOS PÁGINA CATECISMO (AÑO LITÚRGICO) --- */
+.liturgical-calendar-section {
+    padding-top: 0; /* Ajustado por la sección de Adviento */
+    text-align: left; /* Ajustado por la sección de Adviento */
+}
+.liturgical-calendar-section h2,
+.liturgical-calendar-section p {
+    text-align: center; /* Centramos solo el título y párrafo de esta sección */
+}
+
+.liturgical-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.liturgical-card {
+    display: flex;
+    align-items: center;
+    background: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    padding: 1.5rem;
+    border-left: 10px solid var(--color-primary); /* Borde de color */
+    text-align: left;
+}
+
+.liturgical-icon {
+    font-size: 2.5rem;
+    margin-right: 1.5rem;
+}
+
+.liturgical-text h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.25rem;
+}
+.liturgical-text p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+/* --- Colores Litúrgicos para las tarjetas --- */
+.liturgical-card.violet { border-color: #551A8B; }
+.liturgical-card.violet .liturgical-icon { color: #551A8B; }
+
+.liturgical-card.white { border-color: #f0f0f0; }
+.liturgical-card.white .liturgical-icon { color: #ccc; }
+
+.liturgical-card.gold { border-color: var(--color-secondary); } /* Reusa tu dorado */
+.liturgical-card.gold .liturgical-icon { color: var(--color-secondary); }
+
+.liturgical-card.green { border-color: #006400; }
+.liturgical-card.green .liturgical-icon { color: #006400; }
+
+.liturgical-card.red { border-color: #B22222; }
+.liturgical-card.red .liturgical-icon { color: #B22222; }
+
+/* --- ESTILOS SECCIÓN DESTACADA DE TIEMPO LITÚRGICO --- */
+.season-highlight-section {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    /* Borde superior con el color litúrgico */
+    border-top: 10px solid #551A8B; /* Morado Adviento/Cuaresma */
+}
+
+@media (min-width: 768px) {
+    .season-highlight-section {
+        flex-direction: row;
+    }
+}
+
+.season-image {
+    flex: 1;
+}
+
+.season-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.season-text {
+    flex: 1.5; /* Más espacio para el texto */
+    padding: 2.5rem;
+}
+
+.season-text h2 {
+    font-size: 2.2rem;
+    margin-top: 0;
+    color: #551A8B; /* Color Morado */
+}
+
+.season-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #333;
+}
+
+/* Lista de características (re-usando estilo de catálogo) */
+.season-features {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.season-features li {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.season-features .fa-check {
+    color: var(--color-secondary); /* Dorado de tu marca */
+    margin-right: 0.75rem;
 }
