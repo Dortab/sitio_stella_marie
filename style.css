@@ -991,3 +991,46 @@ a:hover {
     color: var(--color-secondary); /* Dorado de tu marca */
     margin-right: 0.75rem;
 }
+
+/* --- FILTRO DE MESES (Página Santoral) --- */
+.month-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 1.5rem 0;
+    justify-content: center;
+}
+
+.month-btn {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    border: 2px solid var(--color-secondary);
+    background: transparent;
+    color: var(--color-primary);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.month-btn:hover,
+.month-btn.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.month-btn.all-months {
+    background: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: var(--color-white);
+}
+
+.month-btn.all-months:hover,
+.month-btn.all-months.active {
+    background: #a97f4b;
+    border-color: #a97f4b;
+    color: var(--color-white);
+}

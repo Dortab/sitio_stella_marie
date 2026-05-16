@@ -87,6 +87,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // --- Filtro de Meses (Página Santoral) ---
+    const monthBtns = document.querySelectorAll('.month-btn');
+    const calendarMonths = document.querySelectorAll('.calendar-month');
+
+    if (monthBtns.length > 0) {
+        monthBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const selected = this.dataset.month;
+
+                monthBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                if (selected === 'all') {
+                    calendarMonths.forEach(m => m.style.display = '');
+                } else {
+                    calendarMonths.forEach(m => {
+                        m.style.display = m.dataset.month === selected ? '' : 'none';
+                    });
+                }
+            });
+        });
+    }
+
 }); // <-- Fin del 'DOMContentLoaded'
 
 // --- Limpiador de formulario (Página Contacto) ---
