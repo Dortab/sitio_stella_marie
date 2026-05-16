@@ -1013,6 +1013,9 @@ a:hover {
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    min-height: 44px;
 }
 
 .month-btn:hover,
