@@ -96,15 +96,16 @@ a:hover {
 }
 
 .nav-menu li {
-    margin-left: 2rem;
+    margin-left: 1.1rem;
 }
 
 .nav-menu a {
     font-family: var(--font-body);
     font-weight: 600;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: var(--color-primary);
+    white-space: nowrap;
 }
 
 .nav-menu a:hover, .nav-menu a.active {
@@ -990,6 +991,33 @@ a:hover {
 .season-features .fa-check {
     color: var(--color-secondary); /* Dorado de tu marca */
     margin-right: 0.75rem;
+}
+
+/* --- ESTILOS PÁGINA ACCIÓN SOCIAL --- */
+.accion-intro {
+    text-align: center;
+    padding: 2.5rem 20px 0;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.accion-intro p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+.closing-prayer {
+    text-align: center;
+    padding: 1rem 20px 4rem;
+}
+
+.closing-prayer p {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
 }
 
 /* --- FILTRO DE MESES (Página Santoral) --- */

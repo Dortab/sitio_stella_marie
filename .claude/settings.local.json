@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pandoc \"C:\\\\Users\\\\KAREN CURIEL\\\\OneDrive\\\\Stella Marie\\\\Santoral 2026.docx\" -t plain)"
+    ]
+  }
+}
