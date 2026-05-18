@@ -1007,6 +1007,41 @@ a:hover {
     color: #555;
 }
 
+.accion-photo {
+    text-align: center;
+    padding: 2rem 20px 1rem;
+}
+
+.accion-photo img {
+    max-width: 560px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+}
+
+.accion-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 20px;
+    flex-wrap: wrap;
+}
+
+.accion-card {
+    text-align: center;
+    background: var(--color-light);
+    border-radius: 8px;
+    padding: 2rem 2.5rem;
+    min-width: 220px;
+}
+
+.accion-card h2 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    margin-bottom: 1.2rem;
+}
+
 .closing-prayer {
     text-align: center;
     padding: 1rem 20px 4rem;
