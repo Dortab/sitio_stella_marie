@@ -828,6 +828,30 @@ a:hover {
     box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
+/* Película recomendada del mes */
+.movie-card-featured {
+    position: relative;
+    border: 3px solid var(--color-secondary);
+}
+
+.movie-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--color-secondary);
+    color: var(--color-white);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.movie-badge i {
+    margin-right: 4px;
+}
+
 .movie-card .movie-poster {
     width: 100%;
     height: 400px; /* Alto fijo para pósters */
@@ -984,6 +1008,21 @@ a:hover {
     padding: 2.5rem;
 }
 
+.season-date {
+    display: inline-block;
+    background: #551A8B; /* Color Morado */
+    color: var(--color-white);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+}
+
+.season-date i {
+    margin-right: 6px;
+}
+
 .season-text h2 {
     font-size: 2.2rem;
     margin-top: 0;
@@ -1120,4 +1159,388 @@ a:hover {
     background: #a97f4b;
     border-color: #a97f4b;
     color: var(--color-white);
+}
+/* --- AGENDA 2027 (Página Catálogo) --- */
+.agenda-badges {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.agenda-badges li {
+    background: var(--color-light);
+    border: 1px solid var(--color-secondary);
+    color: var(--color-primary);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.agenda-badges .fa-circle-check {
+    color: var(--color-secondary);
+    margin-right: 4px;
+}
+
+.product-actions a.cta-button i {
+    margin-right: 8px;
+}
+
+.agenda-section {
+    padding: 3rem 0;
+}
+
+.agenda-section-alt {
+    background: var(--color-white);
+}
+
+.agenda-section-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #444;
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+}
+
+.design-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.design-card,
+.contents-card {
+    text-align: center;
+}
+
+.design-card img,
+.contents-card img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+}
+
+.design-card img:hover,
+.contents-card img:hover {
+    transform: translateY(-5px);
+}
+
+.design-card h3 {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+.contents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.contents-card img {
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+}
+
+.contents-card h3 {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    margin-top: 1rem;
+    color: var(--color-primary);
+}
+
+.contents-card .fa-check {
+    color: var(--color-secondary);
+    margin-right: 4px;
+}
+
+.pack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+}
+
+.pack-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: var(--color-light);
+    border: 1px solid #eee;
+    border-top: 6px solid var(--color-secondary);
+    border-radius: 8px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.pack-card-featured {
+    border-top-color: var(--color-primary);
+}
+
+.pack-icon {
+    font-size: 2.5rem;
+}
+
+.pack-card h3 {
+    font-size: 1.3rem;
+    margin: 0.75rem 0 0.5rem;
+}
+
+.pack-includes {
+    color: #444;
+    margin-bottom: 1rem;
+}
+
+.pack-price-old {
+    color: #888;
+    text-decoration: line-through;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.pack-highlight {
+    background: var(--color-secondary);
+    color: var(--color-white);
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 2px 10px;
+    margin: 0;
+}
+
+.pack-price {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 0.25rem 0;
+}
+
+.pack-price span {
+    font-size: 1rem;
+}
+
+.pack-note {
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.pack-card .pack-button {
+    margin-top: auto;
+    width: 100%;
+}
+
+.pack-button i {
+    margin-right: 8px;
+}
+
+.pack-payment {
+    margin-top: 2rem;
+    margin-bottom: 0;
+}
+
+.pack-payment i {
+    color: var(--color-secondary);
+    margin-right: 6px;
+}
+
+.faq-container {
+    max-width: 800px;
+}
+
+.faq-item {
+    background: var(--color-white);
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.faq-item summary {
+    cursor: pointer;
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.faq-item p {
+    padding: 0 1.5rem 1rem;
+    margin: 0;
+    color: #444;
+    line-height: 1.6;
+}
+
+.agenda-message {
+    max-width: 800px;
+    text-align: center;
+}
+
+.agenda-message > p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    font-style: italic;
+    color: #333;
+}
+
+.agenda-closing {
+    margin-top: 2rem;
+    padding: 2rem;
+    border: 2px solid var(--color-secondary);
+    border-radius: 8px;
+    background: var(--color-light);
+}
+
+.agenda-closing h3 {
+    font-size: 1.6rem;
+    margin-top: 0;
+}
+
+/* --- FRANJA DE AVISO DE PREVENTA (Todas las páginas) --- */
+.preventa-strip {
+    position: relative;
+    background: var(--color-secondary);
+    text-align: center;
+    padding: 8px 44px;
+    font-size: 0.9rem;
+}
+
+.preventa-strip a {
+    color: var(--color-white);
+}
+
+.preventa-strip a:hover {
+    text-decoration: underline;
+}
+
+.preventa-strip i {
+    font-size: 0.8rem;
+    margin-left: 4px;
+}
+
+.preventa-strip-close {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--color-white);
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+@media (max-width: 768px) {
+    .preventa-strip {
+        font-size: 0.8rem;
+    }
+    .preventa-strip-extra {
+        display: none;
+    }
+}
+
+/* --- BANNER DE PREVENTA (Página de Inicio) --- */
+.preventa-banner {
+    background: var(--color-primary);
+    padding: 3rem 0;
+}
+
+.preventa-banner-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .preventa-banner-inner {
+        grid-template-columns: 2fr 3fr;
+    }
+}
+
+.preventa-banner-image img {
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.preventa-banner-text {
+    color: var(--color-white);
+}
+
+.preventa-banner-tag {
+    display: inline-block;
+    background: var(--color-secondary);
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+}
+
+.preventa-banner-text h2 {
+    color: var(--color-white);
+    font-size: 2.4rem;
+    margin-top: 0;
+}
+
+.preventa-banner-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.preventa-banner-price strong {
+    color: var(--color-secondary);
+    font-size: 1.4rem;
+}
+
+.preventa-banner-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1.5rem 0 1rem;
+}
+
+.preventa-banner-actions .cta-button-secondary {
+    color: var(--color-white);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.preventa-banner-actions .cta-button-secondary i {
+    margin-right: 6px;
+}
+
+.preventa-banner-text .preventa-banner-note {
+    font-size: 0.95rem;
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .preventa-banner-text {
+        text-align: center;
+    }
+    .preventa-banner-text h2 {
+        font-size: 1.8rem;
+    }
+    .preventa-banner-actions {
+        justify-content: center;
+    }
 }

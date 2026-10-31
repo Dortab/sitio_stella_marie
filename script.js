@@ -27,6 +27,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // --- Franja de Aviso de Preventa (Todas las páginas) ---
+    const preventaStrip = document.getElementById('preventa-strip');
+    const preventaStripClose = document.getElementById('preventa-strip-close');
+
+    if (preventaStrip && preventaStripClose) {
+        try {
+            if (sessionStorage.getItem('preventaStripClosed') === '1') {
+                preventaStrip.style.display = 'none';
+            }
+        } catch (e) {}
+
+        preventaStripClose.addEventListener('click', function() {
+            preventaStrip.style.display = 'none';
+            try {
+                sessionStorage.setItem('preventaStripClosed', '1');
+            } catch (e) {}
+        });
+    }
+
     // --- Validador de Teléfono (Solo Números) ---
     const phoneInput = document.getElementById('contact-phone');
 
@@ -65,8 +84,8 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
-        // Disparadores para las infografías del CATECISMO
-        const infographicImages = document.querySelectorAll('.infographic-thumbnail');
+        // Disparadores para las infografías del CATECISMO y las imágenes de la agenda
+        const infographicImages = document.querySelectorAll('.infographic-thumbnail, .zoomable');
         if (infographicImages.length > 0) {
             infographicImages.forEach(img => {
                 img.addEventListener('click', function() {
@@ -88,18 +107,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- Botón Dinámico de WhatsApp (Página Catálogo) ---
-    const whatsappBtn = document.getElementById('whatsapp-button');
-    const quantityInput = document.getElementById('quantity');
+    // --- Botones de Paquetes por WhatsApp (Página Catálogo) ---
+    const packButtons = document.querySelectorAll('.pack-button');
 
-    if (whatsappBtn && quantityInput) {
-        whatsappBtn.addEventListener('click', function() {
-            const quantity = quantityInput.value;
-            const baseNumber = '525512436351';
-            let message = `Hola, me interesa adquirir ${quantity} agenda(s). Quiero conocer el precio y gastos de envío.`;
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappURL = `https://wa.me/${baseNumber}?text=${encodedMessage}`;
-            window.open(whatsappURL, '_blank', 'noopener,noreferrer');
+    if (packButtons.length > 0) {
+        packButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const pack = this.dataset.pack;
+                const agendaNumber = '525538775248';
+                let message = pack
+                    ? `Hola Stella Marie, me interesa apartar el ${pack} de la Agenda Católica 2027 en preventa.`
+                    : 'Hola Stella Marie, me interesa la preventa de la Agenda Católica 2027.';
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappURL = `https://wa.me/${agendaNumber}?text=${encodedMessage}`;
+                window.open(whatsappURL, '_blank', 'noopener,noreferrer');
+            });
         });
     }
 
