@@ -46,6 +46,43 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // --- Tarjeta Flotante de Preventa (Página Santoral) ---
+    // Aparece después de 15 segundos o al bajar en la página, una vez por visita.
+    const preventaCard = document.getElementById('preventa-card');
+    const preventaCardClose = document.getElementById('preventa-card-close');
+
+    if (preventaCard && preventaCardClose) {
+        let cardClosed = false;
+        try {
+            cardClosed = sessionStorage.getItem('preventaCardClosed') === '1';
+        } catch (e) {}
+
+        if (!cardClosed) {
+            let cardTimer;
+            const onScroll = function() {
+                if (window.scrollY > 600) {
+                    showCard();
+                }
+            };
+            const showCard = function() {
+                preventaCard.hidden = false;
+                window.removeEventListener('scroll', onScroll);
+                clearTimeout(cardTimer);
+            };
+            cardTimer = setTimeout(showCard, 15000);
+            window.addEventListener('scroll', onScroll, { passive: true });
+        }
+
+        const hideCard = function() {
+            preventaCard.hidden = true;
+            try {
+                sessionStorage.setItem('preventaCardClosed', '1');
+            } catch (e) {}
+        };
+        preventaCardClose.addEventListener('click', hideCard);
+        preventaCard.querySelector('a').addEventListener('click', hideCard);
+    }
+
     // --- Validador de Teléfono (Solo Números) ---
     const phoneInput = document.getElementById('contact-phone');
 
